@@ -26,21 +26,21 @@ public class SwaggerConfig {
 		return GroupedOpenApi.builder().group(GROUP).pathsToMatch("/**").build();
 	}
 
-	@Bean
-	public OpenAPI springOpenApi() {
-		return new OpenAPI().info(apiInfo()).addSecurityItem(new SecurityRequirement().addList(SCHEME_KEY, "global"))
-				.components(new Components().addSecuritySchemes(SCHEME_KEY, getSecurityScheme()));
-	}
-
-	private Info apiInfo() {
-		return new Info().title("Spring Microsserviço - DEMO API").description("DEMO API").version("v1")
-				.license(new License().name("Apache 2.0").url("http://springdoc.org"))
-				.contact(new Contact().name("DemoTest").url("https://github.com/")
-						.email("demoteste@gmail.com"));
-	}
-
-	private SecurityScheme getSecurityScheme() {
-		return new SecurityScheme().type(SecurityScheme.Type.OAUTH2)
-				.flows(new OAuthFlows().password(new OAuthFlow().tokenUrl(oAuthServerTokenUri)));
-	}
+//	@Bean
+//	public OpenAPI springOpenApi() {
+//		return new OpenAPI().info(apiInfo()).addSecurityItem(new SecurityRequirement().addList(SCHEME_KEY, "global"))
+//				.components(new Components().addSecuritySchemes(SCHEME_KEY, getSecurityScheme()));
+//	}
+//
+//	private Info apiInfo() {
+//		return new Info().title("Spring Microsserviço - DEMO API").description("DEMO API").version("v1")
+//				.license(new License().name("Apache 2.0").url("http://springdoc.org"))
+//				.contact(new Contact().name("DemoTest").url("https://github.com/")
+//						.email("demoteste@gmail.com"));
+//	}
+//
+//	private SecurityScheme getSecurityScheme() {
+//		return new SecurityScheme().type(SecurityScheme.Type.OAUTH2)
+//				.flows(new OAuthFlows().password(new OAuthFlow().tokenUrl(oAuthServerTokenUri)));
+//	}
 }
